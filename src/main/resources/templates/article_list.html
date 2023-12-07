@@ -1,0 +1,29 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content" class="container my-3">
+    <table class="table">
+        <thead class="table-dark">
+    <tr>
+        <th>번호</th>
+        <th>제목</th>
+        <th>작성 일자</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="articleList,loop : ${articleList}">
+        <td th:text="${loop.count}"></td>
+        <td>
+            <a th:href="@{|/article/detail/${articleList.id}|}" th:text="${articleList.subject}"></a>
+        </td>
+        <td th:text="${#temporals.format(articleList.createDate, 'yyyy-MM-dd HH:mm')}"></td>
+    </tr>
+    </tbody>
+</table>
+</div>
+</html>
+
+
+<!--<button type="button" onclick="location.href='/article/create'"> 등록 </button>-->
+
+<a th:href="@{/article/create}" class="btn btn-primary">질문 등록하기</a>
+
+<a class="nav-link" th:href="@{/user/signup}">회원가입</a>
