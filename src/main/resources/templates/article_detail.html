@@ -1,4 +1,4 @@
-<a th:href="@{/article/list}"> 목록으로</a>
+
 
 <html layout:decorate="~{layout}">
 <div layout:fragment="content" class="container my-3">
@@ -14,9 +14,10 @@
             </div>
         </div>
 </div>
-</html>
-
-
+<a th:href="@{/article/list}"> 목록으로</a>
 <a th:href="@{|/article/modify/${article.id}|}">수정</a>
 
 <a th:href="@{|/article/delete/${article.id}|}">삭제</a>
+</html>
+
+
